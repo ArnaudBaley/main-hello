@@ -55,5 +55,5 @@ function randomNotification() {
     }
     // var notif = new Notification(notifTitle, options);
     self.registration.showNotification('Hello world!', options)
-    setTimeout(randomNotification, 500000);
+    setTimeout(randomNotification, 50000);
 }
