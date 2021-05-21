@@ -54,6 +54,6 @@ function randomNotification() {
         icon: notifImg
     }
     // var notif = new Notification(notifTitle, options);
-    showNotification('Hello world!', options)
+    self.registration.showNotification('Hello world!', options)
     setTimeout(randomNotification, 500000);
 }
