@@ -9,7 +9,8 @@ window.onload = () => {
     requestNotifPermission();
 }
 
-const games = [{
+const games = [
+    {
         slug: 'lost-in-cyberspace',
         name: 'Lost in Cyberspace',
         author: 'Zosia and Bartek',
@@ -36,28 +37,26 @@ const games = [{
 ];
 
 function requestNotifPermission() {
-    Notification.requestPermission().then(function (result) {
-        if (result === 'granted') {
+    Notification.requestPermission().then(function(result) {
+        if(result === 'granted') {
             randomNotification();
         }
     });
 }
 
 function randomNotification() {
-    var randomItem = Math.floor(Math.random() * games.length);
+    var randomItem = Math.floor(Math.random()*games.length);
     var notifTitle = games[randomItem].name;
-    var notifBody = 'Créé par ' + games[randomItem].author + '.';
-    var notifImg = 'data/img/' + games[randomItem].slug + '.jpg';
+    var notifBody = 'Créé par '+games[randomItem].author+'.';
+    var notifImg = 'data/img/'+games[randomItem].slug+'.jpg';
     var options = {
         body: notifBody,
         icon: notifImg
     }
-
+    
     navigator.serviceWorker.ready.then(registration => {
         registration.showNotification('Hello world!', options);
     })
 
-    // var notif = new Notification(notifTitle, options);
-    // self.registration.showNotification('Hello world!', options)
     setTimeout(randomNotification, 5000);
 }
