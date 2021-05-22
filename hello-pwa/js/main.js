@@ -53,7 +53,7 @@ function randomNotification() {
         body: notifBody,
         icon: notifImg
     }
-    // var notif = new Notification(notifTitle, options);
-    self.registration.showNotification('Hello world!', options)
+    var notif = new Notification(notifTitle, options);
+    // self.registration.showNotification('Hello world!', options)
     setTimeout(randomNotification, 5000);
 }
