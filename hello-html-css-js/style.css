@@ -1,0 +1,30 @@
+.flex {
+    display: flex;
+}
+
+.flex-responsive-direction {
+    flex-direction: row;
+}
+
+/* #region background */
+
+.bg-gray {
+    background-color: darkgrey;
+}
+
+.bg-blue {
+    background-color:dodgerblue;
+}
+
+.bg-green {
+    background-color:mediumseagreen
+}
+
+/* #endregion background */
+
+
+@media (max-width: 1199px) {
+    .flex-responsive-direction {
+        flex-direction: column;
+    }
+}
